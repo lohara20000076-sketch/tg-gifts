@@ -2357,6 +2357,7 @@ function tgAvatarInner(p) {
   }
   return esc(tgInitial(p));
 }
+function guestNick(){let n="";try{n=String(prompt("Придумай себе ник (до 20 символов)","")||"").trim().slice(0,20);}catch(e){}return n||"Гость"+Math.floor(1000+Math.random()*9000);}
 function completeTgLogin() {
   const u = tgUser();
   if (u) {
@@ -2372,8 +2373,8 @@ function completeTgLogin() {
     };
   } else {
     state.tgProfile = {
-      username: "@arbuzichok52",
-      displayName: "Arbuzichok",
+      username: "@guest",
+      displayName: guestNick(),
       title: "Player",
       isOwner: false     // v26: права дают только через пароль (ADMIN_PASS), а не флагом
     };
@@ -3520,7 +3521,7 @@ async function olConnect(){
     }
     if(!session)return null;
     const u=session.user,id=u.id,admin=!!(u.app_metadata&&u.app_metadata.is_admin===true),anon=!!u.is_anonymous;
-    const nm=()=>anon?"Гость "+id.slice(0,4):String((state.tgProfile&&state.tgProfile.displayName)||"Игрок").slice(0,40);
+    const nm=()=>String((state.tgProfile&&state.tgProfile.displayName)||(anon?"Гость "+id.slice(0,4):"Игрок")).slice(0,40);
     const rt=p=>{const a=p.split("/");
       if(a[0]==="players"&&a[1])return{t:"players",id:a[1]};
       if(a[0]==="lots"&&a[1])return{t:"lots",id:a[1]};
@@ -3589,6 +3590,7 @@ async function olConnect(){
 (async()=>{try{
   const c=await olConnect();if(!c)return;
   const {db,user,room,id}=c;
+  if(state.tgProfile&&state.tgProfile.displayName==="Arbuzichok"&&!tgUser()){state.tgProfile.displayName=guestNick();state.tgProfile.username="@guest";save();updateHeader();}
   Object.assign(OL,{db,user,room,id,on:true});
   olAdminBoot();
   await olNames([id]);olApplyName();olSync();
