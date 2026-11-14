@@ -3512,7 +3512,7 @@ async function olConnect(){
     let {data:{session}}=await sb.auth.getSession();
     const initData=window.Telegram&&Telegram.WebApp&&Telegram.WebApp.initData;
     if(initData){   // Telegram: подпись проверяет Edge Function tg-auth, токен бота лежит только в секретах
-      const f=await sb.functions.invoke("tg-auth",{body:{initData}});
+      const f=await sb.functions.invoke("clever-action",{body:{initData}});
       if(f.error||!f.data||!f.data.email)throw f.error||new Error("tg-auth");
       const r=await sb.auth.signInWithPassword({email:f.data.email,password:f.data.password});
       if(r.error)throw r.error;session=r.data.session;
