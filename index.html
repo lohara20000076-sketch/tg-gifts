@@ -1,5 +1,32 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><script src="https://telegram.org/js/telegram-web-app.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>TG Gifts Online</title><!-- Updated: vertical case list + first-entry background selection -->
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><script src="https://telegram.org/js/telegram-web-app.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+
+/* TG Gifts 2.0 — Obsidian Luxury polish */
+.case-card,.case-card2{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.11);background:linear-gradient(145deg,#25232f,#11131c)!important;box-shadow:0 12px 28px rgba(0,0,0,.22);transition:transform .2s,border-color .2s}
+.case-card:before,.case-card2:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(167,139,250,.25),transparent 52%);pointer-events:none}
+.case-card:active,.case-card2:active{transform:scale(.975)}
+.case-card .emoji-icon{position:relative;display:grid;place-items:center;width:62px;height:62px;margin:8px auto 10px;border-radius:19px;background:linear-gradient(145deg,rgba(167,139,250,.34),rgba(216,185,121,.12));border:1px solid rgba(255,255,255,.14);font-size:30px;color:#e9ddff;box-shadow:inset 0 1px rgba(255,255,255,.18),0 8px 20px rgba(0,0,0,.2)}
+.case-card .name,.case-card .price,.case-timer{position:relative}
+.temp-case-card{border-color:rgba(192,132,252,.65)!important;background:linear-gradient(145deg,#302044,#171322)!important}
+.case-card2 .cart{box-shadow:inset 0 1px rgba(255,255,255,.2),0 8px 20px rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.14)}
+.case-timer{margin-top:5px;color:#d8b4fe;text-align:center;font-size:10px}
+.oltc-box{border:1px solid rgba(167,139,250,.3)}
+.oltc-meta{display:flex;justify-content:space-between;align-items:center;margin:10px 0 6px;color:var(--txt)}
+.oltc-meta span{font-size:11px;color:var(--mut)}
+.oltc-list{max-height:260px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:6px;background:var(--bg-card)}
+.oltc-item{display:flex;align-items:center;gap:8px;padding:7px 5px;border-bottom:1px solid var(--line);font-size:12px}
+.oltc-item:last-child{border-bottom:0}.oltc-item input{width:17px;height:17px;accent-color:#9b7bd5}
+.oltc-emoji{width:28px;display:grid;place-items:center}.oltc-emoji img{max-width:25px;max-height:25px}
+.oltc-name{min-width:0;display:flex;flex-direction:column;gap:2px}.oltc-name small{font-size:10px;color:var(--mut)}
+.oltc-preview{margin:10px 0;padding:10px;border-radius:12px;background:var(--bg-card);border:1px solid var(--line)}
+.oltc-price{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}.oltc-price span,.oltc-price small{font-size:11px;color:var(--mut)}.oltc-price b{font-size:22px;color:var(--gold)}
+.oltc-chances{display:grid;gap:5px}.oltc-chances div{display:flex;justify-content:space-between;gap:8px;font-size:11px}.oltc-chances span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.oltc-chances b{color:var(--accent);white-space:nowrap}
+.oltc-existing{margin-top:14px;padding-top:10px;border-top:1px solid var(--line)}.oltc-existing-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:12px}.oltc-existing-row span{display:flex;flex-direction:column;gap:2px}.oltc-existing-row small{color:var(--mut);font-size:10px}.oltc-existing-row button{border:1px solid var(--line);background:var(--bg-card);color:var(--txt);border-radius:9px;padding:7px 9px}
+:root[data-theme="light"] .case-card,:root[data-theme="light"] .case-card2{background:linear-gradient(145deg,#fffdf9,#e9e4ef)!important;color:#282331;box-shadow:0 12px 28px rgba(45,35,65,.10)}
+:root[data-theme="light"] .case-card .emoji-icon{color:#5f4b82;background:linear-gradient(145deg,#e5d8ff,#fff4dc)}
+:root[data-theme="light"] .temp-case-card{background:linear-gradient(145deg,#f4eaff,#e5dcf5)!important}
+
+</style></head><body>
+<title>TG Gifts 2.0</title><!-- Updated: vertical case list + first-entry background selection -->
 <style>
 :root{
   --bg:#141724; --bg-panel:#1e2235; --bg-card:#252a41;
@@ -781,6 +808,27 @@ const PATTERNS = [
    .forEach(([n,e,p])=>{const name="NFT "+n;NFTS[name]={name,emoji:e,price:p,rarity:rarityByStars(p*10),type:"nft"};});
 })();
 
+/* TG GIFTS 2.0 — новая авторская коллекция подарков */
+(function(){
+  const gifts=[
+    ["Осколок вечности","🔮",1800],["Корона бездны","👑",8200],["Звёздный феникс","🔥",12500],
+    ["Чёрный лотос","🪷",3600],["Сердце галактики","💜",5400],["Золотой призрак","👻",9800],
+    ["Кристалл нулевой точки","💠",15000],["Лунная комета","☄️",2200],["Сфера рассвета","🌅",3100],
+    ["Печать короля","🗝️",6700],["Сапфировый страж","🛡️",4400],["Роза из обсидиана","🥀",3900],
+    ["Астральный компас","🧭",5100],["Хрустальный кит","🐋",7600],["Маска времени","🎭",8900],
+    ["Солнечный идол","☀️",11500],["Перо создателя","🪶",17500],["Секретный архив","📜",6300],
+    ["Ледяная корона","❄️",7100],["Реликвия титанов","🏺",14500]
+  ];
+  gifts.forEach(([name,emoji,price])=>{GIFTS[name]={name,emoji,price,rarity:rarityByStars(price),type:"gift",collection:"Obsidian"};});
+  const nfts=[
+    ["NFT Хронос","⌛",9000],["NFT Эфирный лев","🦁",14000],["NFT Дракон сингулярности","🐉",22000],
+    ["NFT Архонт звёзд","🌌",35000],["NFT Нулевая корона","👑",52000],["NFT Фантомный кит","🐳",68000],
+    ["NFT Владыка теней","🌑",85000],["NFT Пульсар","🌠",110000],["NFT Квантовый феникс","🦅",145000],
+    ["NFT Абсолютный код","🧬",190000]
+  ];
+  nfts.forEach(([name,emoji,price])=>{NFTS[name]={name,emoji,price,rarity:rarityByStars(price*100),type:"nft",collection:"Genesis"};});
+})();
+
 /* ============================================================
    7. КРАСИВЫЕ НОМЕРА
    ============================================================ */
@@ -896,12 +944,12 @@ function rollDrop(c) {
 }
 
 const CASE_DEFS = [
-  { group: "Базовые", currency: "stars", src: "gifts", list: [["Старт", 50], ["Удача", 100], ["Классика", 200], ["Сюрприз", 350], ["Монетка", 500], ["Бронза", 800], ["Серебро", 1200], ["Звёздный", 2000]] },
-  { group: "Сезонные", currency: "stars", src: "gifts", list: [["Весна", 90], ["Лето", 150], ["Осень", 250], ["Зима", 400], ["Новый Год", 650], ["Хэллоуин", 1000], ["Снегопад", 1500], ["Праздник", 2500]] },
-  { group: "Тематические", currency: "stars", src: "gifts", list: [["Аниме", 120], ["Спорт", 300], ["Еда", 450], ["Технологии", 700], ["Природа", 1100], ["Стихии", 1700], ["Космос", 2800], ["Музыка", 4000]] },
-  { group: "NFT", currency: "tons", src: "nfts", list: [["NFT Старт", 300], ["NFT Редкий", 500], ["NFT Коллекция", 900], ["NFT Легенда", 1500], ["NFT Ультра", 2500], ["NFT Цифровой", 4500], ["NFT Крипто", 8000], ["NFT Артефакт", 14000]] },
-  { group: "Топовые", currency: "stars", src: "top", list: [["Мастер", 10000], ["Легенда", 60000], ["Титан", 110000], ["Олимп", 160000], ["Император", 1000000]] },
-  { group: "Топовые", currency: "tons", src: "top", list: [["VIP", 300000]] }
+  { group:"Начало", currency:"stars", src:"gifts", list:[["Первый шаг",80],["Тихая гавань",180],["Лунный след",360],["Золотой ключ",650]] },
+  { group:"Стихии", currency:"stars", src:"gifts", list:[["Ледяной импульс",900],["Пламя титана",1600],["Штормовой разлом",2800],["Сердце вулкана",4600]] },
+  { group:"Коллекции", currency:"stars", src:"gifts", list:[["Неоновый архив",6500],["Сад вечности",9000],["Королевский зал",14000],["Обсидиановый храм",22000]] },
+  { group:"Цифровые миры", currency:"tons", src:"nfts", list:[["Цифровой импульс",35],["Квантовый зверь",65],["Сингулярность",110],["Нулевая точка",180]] },
+  { group:"Премиум", currency:"stars", src:"top", list:[["Аметистовая корона",30000],["Чёрный бриллиант",45000],["Звёздный феникс",70000],["Абсолют",110000]] },
+  { group:"Секретные", currency:"tons", src:"top", list:[["Затерянный артефакт",260],["Печать бездны",420],["Хронос",700],["Тайна создателя",1200]] }
 ];
 
 const CASES = [];
@@ -909,45 +957,29 @@ let cid = 0;
 CASE_DEFS.forEach(def => {
   def.list.forEach(([name, price]) => {
     const built = buildCaseDrops(name, price, def.currency, def.src);
-    CASES.push({
-      id: "case_" + (cid++), name, group: def.group, price, currency: def.currency,
-      drops: built.drops, rtp: built.rtp, ev: built.ev
-    });
+    CASES.push({ id:"case_"+(cid++), name, group:def.group, price, currency:def.currency,
+      drops:built.drops, rtp:built.rtp, ev:built.ev });
   });
 });
 
-/* ===== v22: ТЕМЫ И НОВЫЕ КЕЙСЫ ===== */
-const THEME={"Базовые":{c1:"#4d78cc",c2:"#7b68ee",e:"🎁"},"Сезонные":{c1:"#ff9a3c",c2:"#c41e3a",e:"🍂"},"Тематические":{c1:"#a35bff",c2:"#ff5ba0",e:"🎭"},"NFT":{c1:"#3de0c9",c2:"#7f5fff",e:"TON"},"Топовые":{c1:"#ffd166",c2:"#8a5a10",e:"👑"}};
-const THEME_DEFS=[
-["Аниме","#ff6a3d","#6a1b9a","🍥","Саске:⚡,Семья шпионов:🥜,Наруто:🍥,Ван-Пис:🏴‍☠️,Тетрадь судьбы:📓,Охотник на демонов:🗡️,Магическая битва:👁️,Атака титанов:🛡️"],
-["Игры","#2fbf71","#1b4f9c","🎮","Кубический мир:⛏️,Ловец монстров:⚪,Королевская битва:🪂,Подземелье:🗡️,Хардкор:🎮,Гонки:🏁"],
-["Фильмы","#e63946","#1d3557","🎬","Школа магии:🪄,Космическая сага:🚀,Мафия:🎩,Супергерои:🦸,Ужасы:👻,Пираты:🦜"],
-["Мемы","#7fff00","#0b6e4f","🐸","Лягушонок:🐸,Сигма:🗿,Шиба:🐕,Мемный кот:😹,Тролль:😈"],
-["Фэнтези","#9b5de5","#1b1464","🐉","Драконы:🐉,Эльфы:🧝,Некромант:💀,Рыцари:⚔️,Алхимик:⚗️"],
-["Киберпанк","#ff2e9a","#00b8d9","🤖","Нейросеть:🧠,Хакер:💻,Андроид:🤖,Неон-Сити:🌃,Дроны:🛸"],
-["Космос","#5b3aa8","#0a0520","🪐","Орбита:🛰️,Марс:🔴,Чёрная дыра:🕳️,Пришельцы:👽,Комета:☄️"],
-["Животные","#f4a261","#2a6f4e","🦁","Саванна:🦁,Океан:🐋,Джунгли:🦜,Арктика:🐧,Ферма:🐄"],
-["Еда","#ffb703","#d00000","🍔","Фастфуд:🍔,Суши:🍣,Сладости:🍬,Пицца:🍕,Десерты:🍰"],
-["Спорт","#06d6a0","#1d4e89","⚽","Футбол:⚽,Баскетбол:🏀,Бокс:🥊,Формула:🏎️,Олимпиада:🥇"],
-["Музыка","#ff5ba0","#3a0ca3","🎸","Рок:🎸,Рэп:🎤,Диджей:🎧,Классика:🎻,Фестиваль:🎶"],
-["Сокровища","#ffd166","#7a4a0a","💰","Пират:🏴‍☠️,Золото:💰,Алмазы:TON,Артефакты:🏺,Клад:🗝️"]
-];
-const CASE_PR=[70,160,380,900,2200,5200,12000,28000];
-/* v24: у каждого кейса своя цена (раньше у тематических совпадали) */
+/* Цветовые темы групп кейсов */
+const THEME={
+  "Начало":{c1:"#64748b",c2:"#334155",e:"✦"},
+  "Стихии":{c1:"#fb7185",c2:"#7c2d12",e:"🔥"},
+  "Коллекции":{c1:"#a78bfa",c2:"#312e81",e:"✧"},
+  "Цифровые миры":{c1:"#22d3ee",c2:"#164e63",e:"⌘"},
+  "Премиум":{c1:"#fbbf24",c2:"#78350f",e:"♛"},
+  "Секретные":{c1:"#c084fc",c2:"#3b0764",e:"◈"}
+};
+const CASE_PR=[80,180,360,650,900,1600,2800,4600];
 const _seenP=new Set(CASES.map(c=>c.currency+":"+c.price));
 function uPrice(key,p,cur){
   const f=0.75+0.6*(Math.abs(hashStr(key))%1000)/1000;
   const st=p*f>=1000?50:10;
   let v=Math.max(st,Math.round(p*f/st)*st);
-  while(_seenP.has(cur+":"+v)) v+=st;
-  _seenP.add(cur+":"+v); return v;
+  while(_seenP.has(cur+":"+v))v+=st;
+  _seenP.add(cur+":"+v);return v;
 }
-THEME_DEFS.forEach(([g,c1,c2,e,s],ti)=>{
-  THEME[g]={c1,c2,e};
-  const add=(name,price,cur,src,em)=>{price=uPrice(g+name,price,cur);const b=buildCaseDrops(name,price,cur,src);CASES.push({id:"case_"+(cid++),name,group:g,price,currency:cur,emoji:em,drops:b.drops,rtp:b.rtp,ev:b.ev});};
-  s.split(",").forEach((x,i)=>{const [name,em]=x.split(":");add(name,Math.round(CASE_PR[Math.min(i,7)]*(1+ti*0.03)/10)*10,"stars","gifts",em);});
-  add(g+" NFT",Math.round((350+ti*220)/10)*10,"tons","nfts",e);
-});
 
 /* ============================================================
    9. ПРЕМИУМ ТАРИФЫ
@@ -973,7 +1005,7 @@ let IS_BETA = false;
 try { IS_BETA = localStorage.getItem("tggifts_mode") === "beta"; } catch (e) {}
 let adminOk = false;                   // админка разблокирована только до перезагрузки страницы
 const KEY = IS_BETA ? "tggifts_beta" : "tggifts_v20";   // у беты свой сейв, основной не трогаем
-const VERSION = 23;
+const VERSION = 24;
 const START_BALANCE = { stars: 0, tons: 0, usd: 0 };   // v24: баланс после обнуления
 
 const DEFAULT_STATE = {
@@ -995,12 +1027,13 @@ const DEFAULT_STATE = {
   showcase: [null, null, null],
   luck: { mult: 1, until: 0 },
   casinoBoost: { until: 0 },
-  quest: { day: "", opened: 0, sold: 0, claimed: false }
+  quest: { day: "", opened: 0, sold: 0, claimed: false },
+  temporaryCases: []
 };
 
 function healState(data) {
   let s = { ...JSON.parse(JSON.stringify(DEFAULT_STATE)), ...(data || {}) };
-  ["gifts", "nfts", "myLots", "globalLots", "globalNftLots", "globalUsdLots"].forEach(k => {
+  ["gifts", "nfts", "myLots", "globalLots", "globalNftLots", "globalUsdLots", "temporaryCases"].forEach(k => {
     if (!Array.isArray(s[k])) s[k] = [];
   });
   if (typeof s.quest !== "object" || !s.quest) s.quest = { ...DEFAULT_STATE.quest };
@@ -1312,11 +1345,15 @@ function show(viewName) {
 /* ============================================================
    14. РЕНДЕР ГЛАВНОЙ (КЕЙСЫ)
    ============================================================ */
+function activeTemporaryCases(){
+  const now=Date.now();
+  return (state.temporaryCases||[]).filter(c=>c&&c.active!==false&&(+c.startsAt||0)<=now&&(+c.endsAt||0)>now);
+}
 function renderHome() {
   const el = document.getElementById("view-home");
-  
+  const allCases=[...CASES,...activeTemporaryCases()];
   const groups = {};
-  CASES.forEach(c => {
+  allCases.forEach(c => {
     if (!groups[c.group]) groups[c.group] = [];
     groups[c.group].push(c);
   });
@@ -1328,10 +1365,11 @@ function renderHome() {
       <div class="carousel-wrapper">
         <div class="carousel">
           ${groupCases.map(c => `
-            <div class="case-card" onclick="openCaseInfo('${c.id}')">
-              <div class="emoji-icon">${c.group === 'NFT' ? 'TON' : '🎁'}</div>
-              <div class="name">${c.name}</div>
-              <div class="price">${c.price.toLocaleString()} ${icon(c.currency)}</div>
+            <div class="case-card ${c.temporary?'temp-case-card':''}" onclick="openCaseInfo('${c.id}')" style="${c.temporary?`--case-a:${c.colorA||'#a78bfa'};--case-b:${c.colorB||'#312e81'}`:''}">
+              <div class="emoji-icon">${c.temporary?'⏳':(c.currency==='tons'?'◈':'✦')}</div>
+              <div class="name">${esc(c.name)}</div>
+              <div class="price">${fmtNum(c.price)} ${icon(c.currency)}</div>
+              ${c.temporary?`<div class="small case-timer">До ${new Date(c.endsAt).toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</div>`:''}
             </div>
           `).join('')}
         </div>
@@ -1381,7 +1419,7 @@ let isSpinning = false;
 function chanceStr(p) { const x = p * 100; return (x >= 10 ? x.toFixed(1) : x.toFixed(2)) + "%"; }
 
 function openCaseInfo(id) {
-  currentCase = CASES.find(c => c.id === id);
+  currentCase = [...CASES,...activeTemporaryCases()].find(c => c.id === id);
   if (!currentCase) return;
   const c = currentCase;
   const sorted = [...c.drops].sort((a, b) => b.v - a.v);
@@ -2684,6 +2722,12 @@ try { localStorage.removeItem("tggifts_v15"); } catch(e) {}
 // Запуск после загрузки
 window.addEventListener("DOMContentLoaded", () => {
   init();
+  let visibleTempCount=activeTemporaryCases().length;
+  setInterval(()=>{
+    if(!document.getElementById("view-home")?.classList.contains("active"))return;
+    const n=activeTemporaryCases().length;
+    if(n!==visibleTempCount){visibleTempCount=n;renderHome();}
+  },30000);
   document.querySelectorAll(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m && !isSpinning) m.classList.remove("open"); }));
 });
 
@@ -2743,7 +2787,7 @@ function setWall(id){state.wall=id;wallStore(id);try{localStorage.setItem("tg_wa
 
 /* --- Кейсы с картинками и темами --- */
 function caseArt(c,big){
-  const t=THEME[c.group]||THEME["Базовые"],e=c.emoji||t.e;
+  const t=THEME[c.group]||{c1:"#a78bfa",c2:"#312e81",e:"⏳"},e=c.emoji||t.e;
   return `<div class="cart${big?" big":""}" style="--c1:${t.c1};--c2:${t.c2}"><span class="sp" style="top:8px;left:12px">✨</span><span class="sp" style="top:30px;right:12px;font-size:11px">✦</span><div class="crate"></div>${emojiImg(e,big?84:60)}</div>`;
 }
 const _openCaseInfo=openCaseInfo;
@@ -2756,16 +2800,15 @@ let homeTheme="all";
 function setTheme(g){homeTheme=g;renderHome();}
 function renderHome(){
   const groups={};
-  CASES.forEach(c=>(groups[c.group]=groups[c.group]||[]).push(c));
+  [...CASES,...activeTemporaryCases()].forEach(c=>(groups[c.group]=groups[c.group]||[]).push(c));
   const names=Object.keys(groups),all=homeTheme==="all";
   const chips=["all",...names].map(g=>`<button class="${g===homeTheme?"sel":""}" onclick="setTheme('${g}')">${g==="all"?"Все":((THEME[g]||{}).e||"")+" "+g}</button>`).join("");
-  const card=c=>`<div class="case-card2" onclick="openCaseInfo('${c.id}')">${caseArt(c)}<div class="name">${c.name}</div><div class="price">${c.price.toLocaleString()} ${icon(c.currency)}</div></div>`;
+  const card=c=>`<div class="case-card2 ${c.temporary?'temp-case-card':''}" onclick="openCaseInfo('${c.id}')">${caseArt(c)}<div class="name">${esc(c.name)}</div><div class="price">${fmtNum(c.price)} ${icon(c.currency)}</div>${c.temporary?`<div class="case-timer">⏳ До ${new Date(c.endsAt).toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</div>`:''}</div>`;
   const body=names.filter(g=>all||g===homeTheme).map(g=>`<div class="section-title" style="font-size:18px;margin:20px 0 4px">${(THEME[g]||{}).e||""} ${g} <span class="small muted">${groups[g].length}</span></div>`+`<div class="case-stack">${groups[g].map(card).join("")}</div>`).join("");
   const nm=["KROLIK","hate","Rich","Neo","Luna","Kira","sigma","Zeus","Mango"],av=["🐺","🍩","👑","🦊","🐼","🔥","🐸","🦄"];
   const live=Array.from({length:8},()=>{const v=Math.floor(80*Math.pow(10,Math.random()*3.2));return `<div class="live-card ${v>5000?"gold":v>800?"red":"blue"}"><div class="avatar">${pick(av)}</div><div class="info"><b>${pick(nm)}</b><span>${v.toLocaleString()} ⭐</span></div></div>`;}).join("");
   $("view-home").innerHTML=`<div class="section-title">📦 Кейсы</div><div class="live-feed">${live}</div>
-  <div class="tabs" style="display:flex;gap:6px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none">${chips}</div>${body}
-  <div class="row" style="margin-top:28px;gap:10px"><div class="box" style="flex:1;margin:0;padding:12px"><div class="small muted">Ежедневный бонус</div><button class="btn-yellow" style="margin-top:8px;width:100%" onclick="claimDaily()">Забрать 500 ⭐</button></div><div class="box" style="flex:1;margin:0;padding:12px"><div class="small muted">Уровень и колесо</div><button class="btn-purple" style="margin-top:8px;width:100%" onclick="openProgress()">🏆 Прогресс</button></div></div>`;
+  <div class="tabs" style="display:flex;gap:6px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none">${chips}</div>${body}`;
 }
 
 /* --- Крафт как в Telegram --- */
@@ -3445,6 +3488,86 @@ async function olLuckSend(off){
   const d={id:uid(),mult:m,until:off?0:Date.now()+t*60000,t:Date.now()};
   try{await OL.db.doc("global/luck").set(d);olLuckApply(d);toast(off?"Общая удача снята":"🍀 Удача x"+m+" у всех на "+t+" мин");}catch(e){toast("Не удалось записать");}
 }
+
+/* ===== ВРЕМЕННЫЕ КЕЙСЫ: общая публикация через существующий global_gifts канал ===== */
+let OLTC_SELECTED=new Set();
+function olTempCatalog(){
+  const all=[...Object.values(GIFTS),...Object.values(NFTS),...LIMITED_ALL];
+  const seen=new Set();
+  return all.filter(x=>x&&x.name&&!seen.has(x.name)&&seen.add(x.name)).sort((a,b)=>baseValue(a)-baseValue(b));
+}
+function olTempCaseResults(){
+  const q=(document.getElementById('oltc-search')?.value||'').trim().toLowerCase();
+  const all=olTempCatalog();
+  const found=q?all.filter(x=>x.name.toLowerCase().includes(q)):all;
+  return found.slice(0,70).map(x=>({x,i:all.indexOf(x)}));
+}
+function olTempCaseListHtml(){
+  return olTempCaseResults().map(({x,i})=>`<label class="oltc-item"><input type="checkbox" ${OLTC_SELECTED.has(i)?'checked':''} onchange="olTempCaseToggle(${i},this.checked)"><span class="oltc-emoji">${emojiImg(x.emoji,25)}</span><span class="oltc-name">${esc(x.name)}<small>${fmtNum(baseValue(x))} ⭐ · ${esc(x.rarity||'обычный')}</small></span></label>`).join('')||'<p class="small muted">Ничего не найдено.</p>';
+}
+function olTempCaseToggle(i,on){if(on)OLTC_SELECTED.add(i);else OLTC_SELECTED.delete(i);olTempCaseRefresh();}
+function olTempCaseSearch(){const el=document.getElementById('oltc-list');if(el)el.innerHTML=olTempCaseListHtml();}
+function olTempCaseBuild(){
+  const all=olTempCatalog(),items=[...OLTC_SELECTED].map(i=>all[i]).filter(Boolean);
+  if(items.length<2)return null;
+  const weights=items.map(x=>1/Math.pow(Math.max(1,baseValue(x)),0.82));
+  const sum=weights.reduce((a,b)=>a+b,0),probs=weights.map(w=>w/sum);
+  const drops=items.map((base,i)=>({base:{...base},v:baseValue(base),p:probs[i]}));
+  const ev=drops.reduce((a,d)=>a+d.v*d.p,0),priceStars=Math.max(20,ev/0.84);
+  const currency=priceStars>=100000?'tons':'stars';
+  const price=roundCur(fromStars(priceStars,currency),currency);
+  return {drops,ev,rtp:ev/priceStars,price,currency,priceStars};
+}
+function olTempCasePreviewHtml(){
+  const b=olTempCaseBuild();
+  if(!b)return `<p class="small muted">Выбери минимум 2 подарка. Цена и шансы рассчитаются автоматически.</p>`;
+  return `<div class="oltc-price"><span>Рекомендуемая цена</span><b>${fmtNum(b.price)} ${icon(b.currency)}</b><small>Средний возврат около ${Math.round(b.rtp*100)}% · ${b.drops.length} предметов</small></div><div class="oltc-chances">${b.drops.map(d=>`<div><span>${esc(d.base.name)}</span><b>${(d.p*100).toFixed(2)}%</b></div>`).join('')}</div>`;
+}
+function olTempCaseRefresh(){const l=document.getElementById('oltc-list'),p=document.getElementById('oltc-preview'),n=document.getElementById('oltc-count');if(l)l.innerHTML=olTempCaseListHtml();if(p)p.innerHTML=olTempCasePreviewHtml();if(n)n.textContent=OLTC_SELECTED.size+' выбрано';}
+function olTempCaseAdminHtml(){
+  const list=(state.temporaryCases||[]).filter(c=>c&&c.active!==false&&c.endsAt>Date.now());
+  return `<div class="box oltc-box" id="oltc-admin"><h3 style="${'margin:0 0 10px;color:var(--txt);text-transform:none;font-size:16px'}">⏳ Временные кейсы</h3>
+    <p class="small muted">Собери временный кейс из подарков каталога. Цена и вероятности рассчитываются автоматически, а опубликованный кейс появляется у всех игроков.</p>
+    <input id="oltc-name" maxlength="42" placeholder="Название кейса, например: Ночная коллекция" style="width:100%;margin:6px 0">
+    <label class="small muted">Срок действия</label><select id="oltc-hours" style="width:100%;margin:5px 0 10px"><option value="1">1 час</option><option value="6">6 часов</option><option value="12">12 часов</option><option value="24" selected>24 часа</option><option value="72">3 дня</option><option value="168">7 дней</option></select>
+    <input id="oltc-search" oninput="olTempCaseSearch()" placeholder="Поиск подарка по названию" style="width:100%;margin:5px 0">
+    <div class="oltc-meta"><b>Выбери дроп</b><span id="oltc-count">${OLTC_SELECTED.size} выбрано</span></div><div id="oltc-list" class="oltc-list">${olTempCaseListHtml()}</div>
+    <div id="oltc-preview" class="oltc-preview">${olTempCasePreviewHtml()}</div>
+    <button type="button" class="btn-open-case" onclick="olTempCasePublish()">Опубликовать временный кейс</button>
+    <p class="small muted">Кейс автоматически исчезнет из магазина после окончания срока. Его запись останется в истории публикаций.</p>
+    <div class="oltc-existing"><b>Активные временные кейсы</b>${list.length?list.map(c=>`<div class="oltc-existing-row"><span>${esc(c.name)}<small>до ${new Date(c.endsAt).toLocaleString('ru-RU')}</small></span><button type="button" onclick="olTempCaseRemove('${String(c.id).replace(/[^\w-]/g,'')}')">Завершить</button></div>`).join(''):'<p class="small muted">Пока нет активных временных кейсов.</p>'}</div>
+  </div>`;
+}
+async function olTempCasePublish(){
+  if(!OL.on||!OLA.canEdit)return toast('Нет прав администратора');
+  const name=(document.getElementById('oltc-name')?.value||'').trim(),b=olTempCaseBuild();
+  if(!name)return toast('Введи название кейса');
+  if(!b)return toast('Выбери минимум 2 подарка');
+  const hours=Math.max(1,Math.min(168,Number(document.getElementById('oltc-hours')?.value)||24));
+  const now=Date.now(),c={id:uid(),name,group:'Временные',price:b.price,currency:b.currency,drops:b.drops,ev:b.ev,rtp:b.rtp,startsAt:now,endsAt:now+hours*3600000,temporary:true,active:true,colorA:'#a78bfa',colorB:'#312e81'};
+  try{await OL.db.doc('global/gifts/items/'+uid()).set({kind:'temp_case_create',case:c,t:now});olTempCaseApply({kind:'temp_case_create',case:c});OLTC_SELECTED.clear();openAdmin();toast('Временный кейс опубликован для всех игроков');}
+  catch(e){toast('Не удалось опубликовать кейс. Проверь подключение.');}
+}
+async function olTempCaseRemove(id){
+  if(!OL.on||!OLA.canEdit)return toast('Нет прав администратора');
+  try{await OL.db.doc('global/gifts/items/'+uid()).set({kind:'temp_case_delete',caseId:id,t:Date.now()});olTempCaseApply({kind:'temp_case_delete',caseId:id});openAdmin();toast('Временный кейс завершён');}
+  catch(e){toast('Не удалось завершить кейс');}
+}
+function olTempCaseApply(d){
+  if(!d||typeof d!=='object')return;
+  state.temporaryCases=Array.isArray(state.temporaryCases)?state.temporaryCases:[];
+  if(d.kind==='temp_case_create'&&d.case&&d.case.id){
+    const c=d.case;if(!state.temporaryCases.some(x=>x.id===c.id))state.temporaryCases.push(c);
+  }else if(d.kind==='temp_case_delete'){
+    state.temporaryCases=state.temporaryCases.map(c=>c.id===d.caseId?{...c,active:false}:c);
+  }else return;
+  save();if(document.getElementById('view-home')?.classList.contains('active'))renderHome();
+  if(OLA.tab==='online'){
+    olAdminRefresh();
+    const wrap=document.getElementById('oltc-admin');if(wrap){const fresh=document.createElement('div');fresh.innerHTML=olTempCaseAdminHtml();const next=fresh.firstElementChild;if(next)wrap.replaceWith(next);}
+  }
+}
+
 function olAdminPart2Html(){
   const ch=(a,i,v)=>`<button type="button" class="up-chip" onclick="document.getElementById('${i}').value=${v}">${a}</button>`,h='margin:0 0 10px;color:var(--txt);text-transform:none;font-size:16px;letter-spacing:0';
   return `<div class="box"><h3 style="${h}">🍀 Удача для всех</h3>
@@ -3484,6 +3607,7 @@ async function olGive(id){
 // у игрока: применяем каждый подарок один раз (ключ в state.grantsDone)
 function olGrantApply(key,d,all){
   if(!d||typeof d!=="object")return;
+  if(d.kind==="temp_case_create"||d.kind==="temp_case_delete"){olTempCaseApply(d);return;}
   const gd=state.grantsDone=state.grantsDone||[];
   if(d.kind==="reset"){
     if(gd.includes(key))return;
@@ -3513,6 +3637,7 @@ function olAdminOnlineHtml(){
     <p class="small muted" id="olad-now" style="margin:10px 0 0">${olAdminNowHtml()}</p>
   </div>
   ${olAdminPart2Html()}
+  ${olTempCaseAdminHtml()}
   <div class="box"><h3 style="margin:0 0 6px;color:var(--txt);text-transform:none;font-size:16px;letter-spacing:0">👥 Игроки</h3>
     <div id="olad-players">${olAdminPlayersHtml()}</div></div>`;
 }
